@@ -11,8 +11,8 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <scala.version>2.11.7</scala.version>
         <scala.compat.version>2.11</scala.compat.version>
@@ -101,11 +101,10 @@
                                 <argument>-v300</argument> <!-- for protoc v3.0.0, can be 261 for v2.6.1 -->
                                 <argument>--throw</argument> <!-- Important: otherwise scalapbc will kill the VM -->
                                 <argument>--proto_path=${project.basedir}/src/main/protobuf</argument>
-                                <argument>--proto_path=${project.basedir}/third_party</argument>
+                                <!--<argument>&#45;&#45;proto_path=${project.basedir}/third_party</argument>-->
                                 <argument>--scala_out=${project.build.directory}/generated-sources/protobuf</argument>
 
-                                <argument>${project.basedir}/src/main/protobuf/example.proto</argument>
-                                <argument>${project.basedir}/src/main/protobuf/anotherexample.proto</argument>
+                                <argument>${project.basedir}/src/main/protobuf/addressbook.proto</argument>
                             </arguments>
                         </configuration>
                     </execution>
